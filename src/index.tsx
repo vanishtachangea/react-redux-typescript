@@ -8,12 +8,17 @@ interface AppProps {
 interface AppState {
   counter: number
 }
-class App extends React.Component<AppProps>{
+
+const App = (props:AppProps):JSX.Element=>{
+  return <div>{props.color}</div>
+} 
+
+/* class App extends React.Component<AppProps>{
   state = { counter: 0 }
-/*   constructor(props: AppProps) {
-    super(props);
-    this.state = { counter: 0 }
-  } */
+  //  constructor(props: AppProps) {
+  //   super(props);
+  //   this.state = { counter: 0 }
+  // } 
 
   onIncrement = (): void => {
     this.setState({ counter: this.state.counter + 1 });
@@ -33,10 +38,10 @@ class App extends React.Component<AppProps>{
   }
 
 }
-
+ */
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App color='red'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
