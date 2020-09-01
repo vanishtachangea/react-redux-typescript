@@ -3,35 +3,35 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 interface AppProps {
-  color?:string;
+  color?: string;
 }
-interface AppState{
-  counter:number
+interface AppState {
+  counter: number
 }
-class App extends React.Component<AppProps, AppState>{
-  
-constructor(props:AppProps){
-  super(props);
-  this.state = {counter:0}
-}
+class App extends React.Component<AppProps>{
+  state = { counter: 0 }
+/*   constructor(props: AppProps) {
+    super(props);
+    this.state = { counter: 0 }
+  } */
 
-  onIncrement =():void=>{
-    this.setState({counter:this.state.counter+1});
+  onIncrement = (): void => {
+    this.setState({ counter: this.state.counter + 1 });
   }
-  onDecrement =():void=>{
-    this.setState({counter:this.state.counter-1});
+  onDecrement = (): void => {
+    this.setState({ counter: this.state.counter - 1 });
   }
-  render(){
+  render() {
     return (<div>{this.props.color}
-    
-    <div>
-      <button onClick={this.onIncrement}>Increment</button>
-      <button onClick={this.onDecrement}>Decrement</button>
-      {this.state.counter}
-    </div>
+
+      <div>
+        <button onClick={this.onIncrement}>Increment</button>
+        <button onClick={this.onDecrement}>Decrement</button>
+        {this.state.counter}
+      </div>
     </div>)
   }
-  
+
 }
 
 ReactDOM.render(
